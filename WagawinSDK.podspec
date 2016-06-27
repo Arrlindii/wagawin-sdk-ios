@@ -17,7 +17,7 @@ The Wagawin SDK will allow you to connect your app to the Wagawin Ad Network and
 
   s.source_files = 'WagawinSDK/Framework/**/*.h'
   s.vendored_libraries = 'WagawinSDK/Framework/**/*.a'
-  s.public_header_files = 'WagawinSDK/Assets/**/*.h'
+  s.public_header_files = 'WagawinSDK/Framework/**/*.h'
 
   s.resources = ['WagawinSDK/Assets/**/*.bundle']
   s.frameworks = 'UIKit', 'SystemConfiguration', 'CoreTelephony'
