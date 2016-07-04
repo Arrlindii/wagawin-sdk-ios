@@ -24,7 +24,7 @@
     [super viewDidLoad];
 
 	// Do any additional setup after loading the view, typically from a nib.
-    [WagawinSDK initWithAppId:@"037add71517e4010b6bb6f6291782f44" andDelegate:self inEnvironment:WAGEnvironmentSandbox];
+    [WagawinSDK initWithAppId:@"<# your app id#>" andDelegate:self inEnvironment:WAGEnvironmentSandbox];
     
     playAdButton = [[UIButton alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2, self.view.frame.size.height/2, 200, 100)];
     [self.view addSubview:playAdButton];
