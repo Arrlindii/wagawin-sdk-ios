@@ -22,6 +22,8 @@ pod "WagawinSDK" , '~> 1.3.1'
 
 Alternatively you can download the files manually from the [releases page][releases] and import them into your project by hand.
 
+The footprint of your final app will increase by ~1 MB
+
 [releases]: https://github.com/Wagawin/wagawin-sdk-ios/releases
 
 ## Integration
