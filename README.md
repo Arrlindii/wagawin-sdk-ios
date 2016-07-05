@@ -57,9 +57,10 @@ To enable the downloading of Ad media from different sources you have to add the
 
 When you submit your app to the Appstore you are asked if you use the IDFA (Advertising Identifier). The Wagawin SDK uses the IDFA to identify the user and to serve appropriate Ads, **therefore you have to select YES**
 
-You then also have to check that this your app uses the IDFA for serving ads.
+The following things also have to be checked:
 
-You also have to check that your app respects "Limit Ad Tracking setting in iOS"
+- your app uses the IDFA for serving ads
+- your app respects "Limit Ad Tracking setting in iOS"
 
 Wagawin currently does not use the IDFA to track the install of the app it is included.
 
@@ -140,7 +141,7 @@ id wagawinSdkDelegate = self;
 ```
 
 
-The second one is the GameCallbackDelegate, which is passed when displaying and Ad to receive messages when the Ad display is finished
+The second one is the GameCallbackDelegate, which is passed when displaying an Ad to receive messages when the Ad display is finished
 ```objc
 [WagawinSDK showAdWithViewController:viewControllerForPresenting andDelegate:gameCallbackDelegate];
 
