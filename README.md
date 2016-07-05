@@ -1,4 +1,5 @@
-# WagawinSDK
+# wagawin-sdk-ios
+WagawinSDK for iOS
 
 [![Version](https://img.shields.io/cocoapods/v/WagawinSDK.svg?style=flat)](http://cocoapods.org/pods/WagawinSDK)
 [![License](https://img.shields.io/cocoapods/l/WagawinSDK.svg?style=flat)](http://cocoapods.org/pods/WagawinSDK)
@@ -152,6 +153,12 @@ The second one is the GameCallbackDelegate, which is passed when displaying an A
 -(void)onAdCancelled;
  
 ```
+
+##Going into Production
+
+Once you have confirmed that the SDK works and you have decided to publish your App, you need to switch to Production mode. Just switch from passing `WAGEnvironmentSandbox` to `WAGEnvironmentProduction` in the init call, i.e. `[WagawinSDK initWithAppId:@"<YOUR APP KEY>" andDelegate:wagawinSdkDelegate inEnvironment:WAGEnvironmentProduction];`
+
+NOTE: If your App hasn't been verified yet, you will recieve no ads when you are in `PRODUCTION`-mode. You can check your status in the [Admin Panel](https://wap-admin.wagawin.de)
 
 
 ## Author
