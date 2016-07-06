@@ -170,5 +170,5 @@ Wagawin GmbH, publisher@wagawin.com
 Copyright 2016, Wagawin GmbH, all rights reserved
 
 ## Changelog
-
- - v1.3.0 added translations for EN, HU, RU, PL
+[changelog.md][changelog]
+[changelog]: https://github.com/Wagawin/wagawin-sdk-ios/blob/master/Changelog.md
