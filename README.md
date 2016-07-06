@@ -1,4 +1,5 @@
-# WagawinSDK
+# wagawin-sdk-ios
+WagawinSDK for iOS
 
 [![Version](https://img.shields.io/cocoapods/v/WagawinSDK.svg?style=flat)](http://cocoapods.org/pods/WagawinSDK)
 [![License](https://img.shields.io/cocoapods/l/WagawinSDK.svg?style=flat)](http://cocoapods.org/pods/WagawinSDK)
@@ -21,6 +22,8 @@ pod "WagawinSDK" , '~> 1.3.2'
 ```
 
 Alternatively you can download the files manually from the [releases page][releases] and import them into your project by hand.
+
+The footprint of your final app will increase by ~1 MB
 
 [releases]: https://github.com/Wagawin/wagawin-sdk-ios/releases
 
@@ -55,9 +58,10 @@ To enable the downloading of Ad media from different sources you have to add the
 
 When you submit your app to the Appstore you are asked if you use the IDFA (Advertising Identifier). The Wagawin SDK uses the IDFA to identify the user and to serve appropriate Ads, **therefore you have to select YES**
 
-You then also have to check that this your app uses the IDFA for serving ads.
+The following things also have to be checked:
 
-You also have to check that your app respects "Limit Ad Tracking setting in iOS"
+- your app uses the IDFA for serving ads
+- your app respects "Limit Ad Tracking setting in iOS"
 
 Wagawin currently does not use the IDFA to track the install of the app it is included.
 
@@ -138,7 +142,7 @@ id wagawinSdkDelegate = self;
 ```
 
 
-The second one is the GameCallbackDelegate, which is passed when displaying and Ad to receive messages when the Ad display is finished
+The second one is the GameCallbackDelegate, which is passed when displaying an Ad to receive messages when the Ad display is finished
 ```objc
 [WagawinSDK showAdWithViewController:viewControllerForPresenting andDelegate:gameCallbackDelegate];
 
@@ -149,6 +153,12 @@ The second one is the GameCallbackDelegate, which is passed when displaying and 
 -(void)onAdCancelled;
  
 ```
+
+##Going into Production
+
+Once you have confirmed that the SDK works and you have decided to publish your App, you need to switch to Production mode. Just switch from passing `WAGEnvironmentSandbox` to `WAGEnvironmentProduction` in the init call, i.e. `[WagawinSDK initWithAppId:@"<YOUR APP KEY>" andDelegate:wagawinSdkDelegate inEnvironment:WAGEnvironmentProduction];`
+
+NOTE: If your App hasn't been verified yet, you will recieve no ads when you are in `PRODUCTION`-mode. You can check your status in the [Admin Panel](https://wap-admin.wagawin.de)
 
 
 ## Author
