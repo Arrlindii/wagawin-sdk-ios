@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import "WAGSDKOptions.h"
 
 /**
  WAGEnvironment
@@ -66,6 +67,15 @@ typedef enum WAGEnvironment : NSUInteger {
 
 
 @interface WagawinSDK : NSObject
+
+/**
+ *  Basic initializing of SDK
+ *
+ *  @param options Create a WAGSDKOptions object and set the values
+ */
++(void)initWithOptions:(WAGSDKOptions*)options;
+
+
 /**
 *  Basic initializing of SDK with WagawinSDKDelegate
 *
@@ -101,5 +111,8 @@ typedef enum WAGEnvironment : NSUInteger {
  *  @return YES if an ad is ready to be presented, NO if there is no ad ready
  */
 +(BOOL)isAdAvailable;
+
+
+
 
 @end
