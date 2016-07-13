@@ -105,7 +105,7 @@ typedef enum WAGEnvironment : NSUInteger {
 +(void)showAdGameWithViewController:(UIViewController*)viewController completionBlock:(void (^)(void))completionBlock cancelBlock:(void (^)(void))cancelBlock;
 
 
-/**
+/***
  *  Check if a game is ready for presenting
  *
  *  @return YES if an ad is ready to be presented, NO if there is no ad ready
