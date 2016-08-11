@@ -4,7 +4,11 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
-## 1.4.1 - 2016-08-11
+## 1.4.2 - 2016-08-11
+###Fixed
+- fixed bug in swap game during the intro counter
+
+## 1.4.1 - 2016-08-11
 ###Fixed
 - fixed broken build script which resulted in missing files
 
