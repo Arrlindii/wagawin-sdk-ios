@@ -4,7 +4,11 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
-## 1.3.7 - 2016-08-02
+## 1.4.1 - 2016-08-11
+###Fixed
+- fixed broken build script which resulted in missing files
+
+## 1.3.7 - 2016-08-02
 ### Fixed
 - fixed that sound would not stop when cancelling a video game
 

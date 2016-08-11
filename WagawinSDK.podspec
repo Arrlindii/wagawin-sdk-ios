@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'WagawinSDK'
-  s.version          = '1.4.0'
+  s.version          = '1.4.1'
   s.summary          = 'The Wagawin Ad Network SDK'
 
   s.description      = <<-DESC
