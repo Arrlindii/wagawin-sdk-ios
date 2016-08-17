@@ -161,6 +161,9 @@ Once you have confirmed that the SDK works and you have decided to publish your 
 
 NOTE: If your App hasn't been verified yet, you will receive no ads when you are in `PRODUCTION`-mode. You can check your status in the [Admin Panel](https://wap-admin.wagawin.de)
 
+NOTE: If your app uses its own sound or music, you must ensure that it doesn't play during an Wagawin ad. To do this, you use the callbacks provided by the GameCallbackDelegate protocol to stop your audio when the ad starts and resume your audio when the ad finishes.
+
+NOTE: To support WagawinSDK your app must support at least one portrait and one landscape orientation. Otherwise it may lead to crashes. Your ViewControllers however dont need to support multiple interface orientations.
 
 ## Author
 
