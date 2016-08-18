@@ -4,7 +4,12 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
-## 1.4.2 - 2016-08-11
+## 1.4.3 - 2016-08-18
+##Added
+- added appstore rating, name and logo in the endcard of standard games
+- added date validation for games
+
+## 1.4.2 - 2016-08-11
 ###Fixed
 - fixed bug in swap game during the intro counter
 

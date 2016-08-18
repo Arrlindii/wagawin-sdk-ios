@@ -112,4 +112,5 @@ typedef enum WAGEnvironment : NSUInteger {
  */
 +(BOOL)isAdAvailable;
 
+
 @end
