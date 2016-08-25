@@ -13,6 +13,8 @@ To run the example project, clone the repo and run `pod install` from the Exampl
 ## Requirements
 The Sdk supports iOS 7.1+ and XCode 7.3+
 
+To integrate the SDK and to receive Ads you have to register at our [Admin Panel](https://wap-admin.wagawin.de/register). You will get your AppId there, which is needed to initialize the SDK.
+
 ## Installation
 
 WagawinSDK is available through [CocoaPods](http://cocoapods.org). To install
