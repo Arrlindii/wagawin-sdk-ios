@@ -4,24 +4,29 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## 1.4.4 - 2016-08-30
+## Fixed
+- a bug that caused the video player to not to play certain videos
+- added more information to private error API to resolve problems easier
+
 ## 1.4.3 - 2016-08-18
 ##Added
 - added appstore rating, name and logo in the endcard of standard games
 - added date validation for games
 
-## 1.4.2 - 2016-08-11
+## 1.4.2 - 2016-08-11
 ###Fixed
 - fixed bug in swap game during the intro counter
 
-## 1.4.1 - 2016-08-11
+## 1.4.1 - 2016-08-11
 ###Fixed
 - fixed broken build script which resulted in missing files
 
-## 1.3.7 - 2016-08-02
+## 1.3.7 - 2016-08-02
 ### Fixed
 - fixed that sound would not stop when cancelling a video game
 
-## 1.3.6 - 2016-07-13
+## 1.3.6 - 2016-07-13
 ### Changed
 - changelog
 

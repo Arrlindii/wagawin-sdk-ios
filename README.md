@@ -21,7 +21,7 @@ WagawinSDK is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod "WagawinSDK" , '~> 1.4.3'
+pod "WagawinSDK" , '~> 1.4.4'
 ```
 
 Alternatively, you can download the files manually from the [releases page][releases] and import them into your project by hand.
@@ -55,7 +55,7 @@ To enable the downloading of Ad media from different sources, you have to add th
 </dict>
 ```
 
-
+NOTE: With certain frameworks you may get linker errors. To get rid of the errors you have to add the $(inherited) linker flag and set the "Build active architecture only" flag to NO in the Build Settings
 
 ####**Important:  Submitting your App to the Appstore (IDFA Advertising Identifier)**
 
