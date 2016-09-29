@@ -59,6 +59,16 @@ typedef enum WAGEnvironment : NSUInteger {
 -(void)onAdComplete;
 
 /**
+ *  onAdComplete
+ *  The ad was displayed successfully
+ *
+ *  Fraud Protection
+ *  gameId: you can use this Id to verify with our backend that the game was not played more than once
+ *  please contact our team to get more information on this topic support@wagawin.com
+ */
+-(void)onAdComplete:(NSString*)gameId;
+
+/**
  *  onAdCancelled
  *  The ad display was cancelled
  */
@@ -111,5 +121,6 @@ typedef enum WAGEnvironment : NSUInteger {
  *  @return YES if an ad is ready to be presented, NO if there is no ad ready
  */
 +(BOOL)isAdAvailable;
+
 
 @end

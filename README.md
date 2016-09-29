@@ -21,7 +21,7 @@ WagawinSDK is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod "WagawinSDK" , '~> 1.4.4'
+pod "WagawinSDK" , '~> 1.4.5'
 ```
 
 Alternatively, you can download the files manually from the [releases page][releases] and import them into your project by hand.
@@ -151,6 +151,9 @@ The second one is the GameCallbackDelegate, which is passed when displaying an A
 
 //onAdComplete is called then the Wagawin Sdk has finished displaying the ad
 -(void)onAdComplete;
+
+//onAdComplete:(NSString*)gameId; is called then the Wagawin Sdk has finished displaying the ad. The game Id is a unique id for every played game which can be used for fraud protection. Please contact us if you want to know more about this topic.
+-(void)onAdComplete:(NSString*)gameId;;
  
 //onAdCancelled is called when an ad was cancelled by the user (not implemented yet)
 -(void)onAdCancelled;
