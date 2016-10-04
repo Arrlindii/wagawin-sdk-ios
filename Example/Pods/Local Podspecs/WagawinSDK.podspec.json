@@ -1,6 +1,6 @@
 {
   "name": "WagawinSDK",
-  "version": "1.4.5",
+  "version": "1.4.6",
   "summary": "The Wagawin Ad Network SDK",
   "description": "The Wagawin SDK will allow you to connect your app to the Wagawin Ad Network and display Wagawin Ads in your native iOS application.",
   "homepage": "https://www.wagawin.com",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/Wagawin/wagawin-sdk-ios.git",
-    "tag": "1.4.5"
+    "tag": "1.4.6"
   },
   "platforms": {
     "ios": "7.1"

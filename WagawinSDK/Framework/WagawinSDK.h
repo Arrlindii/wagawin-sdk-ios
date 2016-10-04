@@ -69,6 +69,12 @@ typedef enum WAGEnvironment : NSUInteger {
 -(void)onAdComplete:(NSString*)gameId;
 
 /**
+ *  onAdError
+ *  shit happens
+ */
+-(void)onAdError;
+
+/**
  *  onAdCancelled
  *  The ad display was cancelled
  */
@@ -121,6 +127,7 @@ typedef enum WAGEnvironment : NSUInteger {
  *  @return YES if an ad is ready to be presented, NO if there is no ad ready
  */
 +(BOOL)isAdAvailable;
+
 
 
 @end

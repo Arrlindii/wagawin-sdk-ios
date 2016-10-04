@@ -4,6 +4,10 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## 1.4.6 - 2016-10-04
+## Added
+- onError callback for errors in the SDK. It is called when the SDK is closed before displaying the Ad correctly.
+
 ## 1.4.5 - 2016-09-29
 ## Added
 - added additional callback which provides a unique game id after an ad was shown. This can be used to prevent fraud
@@ -11,7 +15,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ## Fixed
 - game callbacks were not fire sometimes
 
-## 1.4.4 - 2016-08-30
+## 1.4.4 - 2016-08-30
 ## Fixed
 - a bug that caused the video player to not to play certain videos
 - added more information to private error API to resolve problems easier
