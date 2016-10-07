@@ -153,7 +153,7 @@ The second one is the GameCallbackDelegate, which is passed when displaying an A
 -(void)onAdComplete;
 
 //onAdComplete:(NSString*)adId; is called then the Wagawin Sdk has finished displaying the ad. The Ad Id is a unique id for every played ad which can be used for fraud protection. Please contact us if you want to know more about this topic.
--(void)onAdComplete:(NSString*)gameId;;
+-(void)onAdComplete:(NSString*)adId;;
  
 //onAdCancelled is called when an ad was cancelled by the user (not implemented yet)
 -(void)onAdCancelled;
