@@ -4,7 +4,9 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
-## 1.4.6 - 2016-10-04
+## 1.4.7 - 2016-10-10
+
+## 1.4.6 - 2016-10-04
 ## Added
 - onError callback for errors in the SDK. It is called when the SDK is closed before displaying the Ad correctly.
 
