@@ -4,11 +4,15 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## 1.4.10 - 2016-10-26
+###improved
+- error code handling for requests
+
 ## 1.4.9 - 2016-10-20
 ###Added
 - implemented improved tracking of third party urls
 
-### 1.4.8 - 2016-10-11
+## 1.4.8 - 2016-10-11
 ###Fixed
 - fixed the presentation of view controller. In some cases the underlying view controller was also dismissed
 

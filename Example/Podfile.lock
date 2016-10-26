@@ -1,5 +1,5 @@
 PODS:
-  - WagawinSDK (1.4.9)
+  - WagawinSDK (1.4.10)
 
 DEPENDENCIES:
   - WagawinSDK (from `../`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  WagawinSDK: ccda46b9da84f869621250a3a508dee07b387fa6
+  WagawinSDK: 61b3b5e0c11f42d3c1eb1946d64dd4e449826e1e
 
 PODFILE CHECKSUM: 605cab93b5d7bd1ef3dae16357ae21b6075fa07e
 
