@@ -172,6 +172,10 @@ NOTE: If your app uses its own sound or music, you must ensure that it doesn't p
 
 NOTE: To support WagawinSDK your app must support at least one portrait and one landscape orientation. Otherwise it may lead to crashes. Your ViewControllers however dont need to support multiple interface orientations.
 
+##Native Adaption
+You can adapt your ad experience to match you app's design. Check out our Wiki Page https://github.com/Wagawin/wagawin-sdk-ios/wiki to see how it's done.
+
+
 ## Author
 
 Wagawin GmbH, publisher@wagawin.com
