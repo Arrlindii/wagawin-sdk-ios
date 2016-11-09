@@ -4,6 +4,16 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## 1.5.0 - 2016-11-09
+### Fixed
+- fixed critical bug for loading ad images which caused a flood of requests in some cases
+- several minor issues
+
+### Added
+- Premium endcards for standard games
+- timebar overlay for bubble blaster
+- added log levels to internal error API
+
 ## 1.4.10 - 2016-10-26
 ###improved
 - error code handling for requests
@@ -12,7 +22,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ###Added
 - implemented improved tracking of third party urls
 
-## 1.4.8 - 2016-10-11
+## 1.4.8 - 2016-10-11
 ###Fixed
 - fixed the presentation of view controller. In some cases the underlying view controller was also dismissed
 

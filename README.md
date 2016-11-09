@@ -21,7 +21,7 @@ WagawinSDK is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod "WagawinSDK" , '~> 1.4.10'
+pod "WagawinSDK" , '~> 1.5.0'
 ```
 
 Alternatively, you can download the files manually from the [releases page][releases] and import them into your project by hand.
@@ -171,10 +171,6 @@ NOTE: If your App hasn't been verified yet, you will receive no ads when you are
 NOTE: If your app uses its own sound or music, you must ensure that it doesn't play during an Wagawin ad. To do this, you use the callbacks provided by the GameCallbackDelegate protocol to stop your audio when the ad starts and resume your audio when the ad finishes.
 
 NOTE: To support WagawinSDK your app must support at least one portrait and one landscape orientation. Otherwise it may lead to crashes. Your ViewControllers however dont need to support multiple interface orientations.
-
-##Native Adaption
-You can adapt your ad experience to match your App's design. Check out our Wiki Page https://github.com/Wagawin/wagawin-sdk-ios/wiki to see how it's done.
-
 
 ## Author
 
