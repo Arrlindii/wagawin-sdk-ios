@@ -20,6 +20,18 @@ typedef enum WAGEnvironment : NSUInteger {
 }WAGEnvironment;
 
 /**
+ WAGAdLoadError
+ If the AdLoadFailed is called the reason will be a WAGAdLoadError
+ */
+typedef enum WAGAdLoadError : NSUInteger {
+    WAGNoError = 0,
+    WAGNoConnection = 1,
+    WAGNoAdAvailable = 2,
+    WAGNotInitialized = 3,
+    WAGUnknownError = 4
+}WAGAdLoadError;
+
+/**
  *  The WagawinSDKDelegate receives and handles general SDK callback methods
  */
 @protocol WagawinSDKDelegate <NSObject>
@@ -43,6 +55,14 @@ typedef enum WAGEnvironment : NSUInteger {
  *  The SDK successfully downloaded an ad which is now ready for display
  */
 -(void)onAdLoadSuccess;
+
+
+/**
+ *  onAdLoadFailed
+ *  It failed to download an Ad
+ */
+-(void)onAdLoadFailed:(WAGAdLoadError)error;
+
 @end
 
 
@@ -103,22 +123,22 @@ typedef enum WAGEnvironment : NSUInteger {
 
 
 /**
- *  Display the game ontop of the view controller with the WagawinSDKGameCallbackDelegate
+ *  Display the rewarded game ontop of the view controller with the WagawinSDKGameCallbackDelegate
  *
  *  @param viewController The view controller which should display the Ad (should always be the topmost viewcontroller, otherwise the display may fail)
  *  @param delegate       The delegate object which handles callbacks of the WagawinSDKGameCallbackDelegate protocol
  */
-+(void)showAdWithViewController:(UIViewController*)viewController andDelegate:(id)delegate;
++(void)showRewardedAdWithViewController:(UIViewController*)viewController andDelegate:(id)delegate;
 
 
 /**
- *  Display the game ontop of the view controller with completion and cancel block (only one of them is called)
+ *  Display the rewarded game ontop of the view controller with completion and cancel block (only one of them is called)
  *
  *  @param viewController  The view controller which should display the Ad (should always be the topmost viewcontroller, otherwise the display may fail)
  *  @param completionBlock will be called when the ad was shown successfully (equivalent to the onAdComplete callback method)
  *  @param cancelBlock     will be called when the ad was cancelled (equivalent to the onAdCancelled callback method)
  */
-+(void)showAdGameWithViewController:(UIViewController*)viewController completionBlock:(void (^)(void))completionBlock cancelBlock:(void (^)(void))cancelBlock;
++(void)showRewardedAdWithViewController:(UIViewController*)viewController completionBlock:(void (^)(void))completionBlock cancelBlock:(void (^)(void))cancelBlock;
 
 
 /***
@@ -127,5 +147,40 @@ typedef enum WAGEnvironment : NSUInteger {
  *  @return YES if an ad is ready to be presented, NO if there is no ad ready
  */
 +(BOOL)isAdAvailable;
+
+
+/**
+ *  Display the interstitial game ontop of the view controller with completion and cancel block (only one of them is called)
+ *
+ *  @param viewController  The view controller which should display the Ad (should always be the topmost viewcontroller, otherwise the display may fail)
+ *  @param completionBlock will be called when the ad was shown successfully (equivalent to the onAdComplete callback method)
+ *  @param cancelBlock     will be called when the ad was cancelled (equivalent to the onAdCancelled callback method)
+ */
++(void)showInterstitialAdWithViewController:(UIViewController*)viewController completionBlock:(void (^)(void))completionBlock cancelBlock:(void (^)(void))cancelBlock;
+
+
+/**
+ *  Display the interstitial game ontop of the view controller with the WagawinSDKGameCallbackDelegate
+ *
+ *  @param viewController The view controller which should display the Ad (should always be the topmost viewcontroller, otherwise the display may fail)
+ *  @param delegate       The delegate object which handles callbacks of the WagawinSDKGameCallbackDelegate protocol
+ */
++(void)showInterstitialWithViewController:(UIViewController*)viewController andDelegate:(id)delegate;
+
+
+/**
+ *  Load Rewarded Ad
+ *  When you call this method Wagawin SDK will download a Rewarded Ad
+ */
++(void)loadRewardedAd;
+
+
+/**
+ *  Load Interstitial Ad
+ *  When you call this method Wagawin SDK will download an Interstitial Ad
+ */
++(void)loadInterstitialAd;
+
+
 
 @end
