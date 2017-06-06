@@ -11,9 +11,9 @@ WagawinSDK for iOS
 To run the example project, clone the repo and run `pod install` from the Example directory first.
 
 ## Requirements
-The Sdk supports iOS 7.1+ and XCode 7.3+
+The Sdk supports iOS 8.0+ and XCode 7.3+
 
-To integrate the SDK and to receive Ads you have to register at our [Admin Panel](https://wap-admin.wagawin.de/register). You will get your AppId there, which is needed to initialize the SDK.
+To integrate the SDK and to receive Ads you have to register at our [Admin Center](https://admin.wagawin.com). You will get your AppId there, which is needed to initialize the SDK.
 
 ## Installation
 
@@ -21,7 +21,7 @@ WagawinSDK is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod "WagawinSDK" , '~> 1.6.0'
+pod "WagawinSDK" , '~> 2.0.0'
 ```
 
 Alternatively, you can download the files manually from the [releases page][releases] and import them into your project by hand.
@@ -37,27 +37,17 @@ If not already done, you have to add the following linker flag to the Build Sett
 -ObjC
 ```
 
-
 Link your target under Build Phases with the following libraries:
 ```objc
 SystemConfiguration.framework
 CoreTelephony.framework
 libWagawinSDKLibrary.a
-```
-
-
-To enable the downloading of Ad media from different sources, you have to add the following code to your Info.plist:
-```xml
-<key>NSAppTransportSecurity</key>
-<dict>
-<key>NSAllowsArbitraryLoads</key>
-<true/>
-</dict>
+libz.tbd
 ```
 
 NOTE: With certain frameworks you may get linker errors. To get rid of the errors you have to add the $(inherited) linker flag and set the "Build active architecture only" flag to NO in the Build Settings
 
-####**Important:  Submitting your App to the Appstore (IDFA Advertising Identifier)**
+#### Important:  Submitting your App to the Appstore (IDFA Advertising Identifier)
 
 When you submit your app to the Appstore, you are asked if you use the IDFA (Advertising Identifier). The Wagawin SDK uses the IDFA to identify the user and to deliver appropriate Ads, **therefore you have to select YES.**
 
@@ -80,14 +70,31 @@ To import the Wagawin Library, you need to set the following import statement:
 #import "WagawinSDK.h"
 ```
 
+To initialize your app with the Wagawin Ad network, you have to create a WAGOptions object and set the following parameters:
 
-To initialize your app with the Wagawin Ad network, you have to call the initWithAppId method. You can optionally pass a delegate to receive callbacks from inside the SDK. You can get your App Key from the Wagawin Admin Panel:
 ```objc
-id wagawinSdkDelegate = self;
-[WagawinSDK initWithAppId:@"<YOUR APP KEY>" andDelegate:wagawinSdkDelegate inEnvironment:WAGEnvironmentSandbox];
+    WAGOptions* options = [WAGOptions new];
+    options.appId = @"<YOUR APP KEY>";
+
+    //set the delegate that receives callbacks here
+    options.delegate = self;
+
+    //set user data
+    options.age = 20;
+    options.gender = WAGMale //or WAGFemale;
+    options.keywords = @"add comma separated keywords here";
+
+    //set the environment your app uses
+    options.environment = WAGEnvironmentSandbox;
+
+    //you can also set the location of you user if you know it. This works also after the SDK was initialized
+    [WagawinSDK setLocation:[[CLLocation alloc] initWithLatitude:-56.6462520 longitude:-36.6462520]];
+
+    //after configuring the SDK you can initialize with this call
+    [WagawinSDK initWithOptions:options];
 ```
 
-For testing, please set the environment variable to: 
+For testing, please set the environment variable to:
 ```objc
 WAGEnvironmentSandbox
 ```
@@ -97,74 +104,31 @@ WAGEnvironmentProduction
 ```
 
 ### Loading an Ad
-You can load Interstitial ads or Rewarded ads by calling the following methods:
+You can load Ads by calling the following methods (with the zone hash key you can find in the Admin Center):
 
 ```objc
-//load a rewarded ad
-[WagawinSDK loadRewardedAd];
-
-//load interstitial ad
-[WagawinSDK loadInterstitialAd];
+//load ads with this call. You can specify for which zone you want to load an ad. You can configure your zones in the admin panel. You can load ads for multiple zones.
+[WagawinSDK loadAdWithZone:@"yourzone1"];
+[WagawinSDK loadAdWithZone:@"yourzone2"];
 
 ```
 
-You should load an app about 20 seconds before you want to display it.
+You should load an ad at least 20 seconds before you want to display it.
 
 
 ### Displaying an Ad
 
-Once you reached the point where you want to display the ad, you can check if it's available:
+Once you reached the point where you want to display an ad, you can check if it's available:
 ```objc
-BOOL adAvailable = [WagawinSDK isAdAvailable];
+BOOL adAvailable = [WagawinSDK isAdAvailableForZone:@"yourzone1"];
 ```
 
-If an Ad is available, you can display the ad with the following methods:
+If an Ad is available for the zone, you can display the ad with the following method:
 ```objc
+// you have to pass a view controller which is used to present the ad. Also you should pass a delegate which implements the WagawinGameDelegate Protocol to determine when the game has ended
 if (adAvailable) {
-[WagawinSDK showRewardedAdWithViewController:self completionBlock:^{
-//this block will be called when Wagawin Sdk has finished displaying the Ad
-} cancelBlock:^{
-
-}];
-
-//or if you want to display an interstitial
-
-[WagawinSDK showInterstitialAdWithViewController:self completionBlock:^{
-//this block will be called when Wagawin Sdk has finished displaying the Ad
-} cancelBlock:^{
-
-}];
-
+  [WagawinSDK showAdWithZone:@"yourzone1" andViewController:self andDelegate:self];
 }
-```
-
-or
-
-```objc
-//if you do not want to use the block interface for game callback handling 
-//you can use the WagawinSDKGameCallbackDelegate which is passed when you start a game with
-
-id gameCallbackDelegate = self;
-UIViewController* viewControllerForPresenting = self;
-
-/**
-*  Display the rewarded game ontop of the view controller with the WagawinSDKGameCallbackDelegate
-*
-*  @param viewController The view controller which should display the Ad (should always be the topmost viewcontroller, otherwise the display may fail)
-*  @param delegate       The delegate object which handles callbacks of the WagawinSDKGameCallbackDelegate protocol
-*/
-[WagawinSDK showRewardedAdWithViewController:viewControllerForPresenting andDelegate:gameCallbackDelegate];
-
-
-
-/**
-*  Display the interstitial game ontop of the view controller with the WagawinSDKGameCallbackDelegate
-*
-*  @param viewController The view controller which should display the Ad (should always be the topmost viewcontroller, otherwise the display may fail)
-*  @param delegate       The delegate object which handles callbacks of the WagawinSDKGameCallbackDelegate protocol
-*/
-[WagawinSDK showInterstitialWithViewController:viewControllerForPresenting andDelegate:gameCallbackDelegate];
-
 ```
 
 ### Delegate Methods
@@ -183,19 +147,15 @@ id wagawinSdkDelegate = self;
 //onAdLoadSuccess will be called when an ad was successfully downloaded and is ready to be displayed
 -(void)onAdLoadSuccess;
 
-
-//onAdLoadFailed It failed to download an Ad
--(void)onAdLoadFailed:(WAGAdLoadError)error;
+//onAdLoadFailed is called when the download for an Ad for a specific zone failed
+-(void)onAdLoadFailed:(WAGAdLoadError)error forZone:(NSString*)zone;
 
 ```
 
 
-The second one is the GameCallbackDelegate, which is passed when displaying an Ad to receive messages after the Ad display:
+The second one is the WagawinGameDelegate, which is passed when displaying an Ad to receive messages after the Ad display:
 ```objc
-[WagawinSDK showAdWithViewController:viewControllerForPresenting andDelegate:gameCallbackDelegate];
-
-//onAdComplete is called then the Wagawin Sdk has finished displaying the ad
--(void)onAdComplete;
+[WagawinSDK showAdWithZone:@"yourzone1" andViewController:self andDelegate:self];
 
 //onAdComplete:(NSString*)gameId; is called then the Wagawin Sdk has finished displaying the ad. The game Id is a unique id for every played game which can be used for fraud protection. Please contact us if you want to know more about this topic.
 -(void)onAdComplete:(NSString*)gameId;;
@@ -207,11 +167,11 @@ The second one is the GameCallbackDelegate, which is passed when displaying an A
 -(void)onAdError;
 ```
 
-##Going into Production
+## Going into Production
 
 Once you have confirmed that the SDK works and you have decided to publish your App, you need to switch to Production mode. Just switch from passing `WAGEnvironmentSandbox` to `WAGEnvironmentProduction` in the init call, i.e. `[WagawinSDK initWithAppId:@"<YOUR APP KEY>" andDelegate:wagawinSdkDelegate inEnvironment:WAGEnvironmentProduction];`
 
-NOTE: If your App hasn't been verified yet, you will receive no ads when you are in `PRODUCTION`-mode. You can check your status in the [Admin Panel](https://wap-admin.wagawin.de)
+NOTE: If your App hasn't been verified yet, you will receive no ads when you are in `PRODUCTION`-mode. You can check your status in the Admin Center.
 
 NOTE: If your app uses its own sound or music, you must ensure that it doesn't play during an Wagawin ad. To do this, you use the callbacks provided by the GameCallbackDelegate protocol to stop your audio when the ad starts and resume your audio when the ad finishes.
 
@@ -223,7 +183,7 @@ Wagawin GmbH, publisher@wagawin.com
 
 ## License
 
-Copyright 2016, Wagawin GmbH, all rights reserved
+Copyright 2017, Wagawin GmbH, all rights reserved
 
 ## Changelog
 [changelog.md][changelog]

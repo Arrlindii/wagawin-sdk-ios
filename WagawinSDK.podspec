@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'WagawinSDK'
-  s.version          = '1.6.0'
+  s.version          = '2.0.0'
   s.summary          = 'The Wagawin Ad Network SDK'
 
   s.description      = <<-DESC
@@ -9,11 +9,11 @@ The Wagawin SDK will allow you to connect your app to the Wagawin Ad Network and
                        DESC
 
   s.homepage         = 'https://www.wagawin.com'
-  s.license          = { :type => 'Copyright', :text => 'Copyright 2016, Wagawin GmbH, all rights reserved' }
+  s.license          = { :type => 'Copyright', :text => 'Copyright 2017, Wagawin GmbH, all rights reserved' }
   s.author           = { 'Wagawin GmbH' => 'publisher@wagawin.com' }
   s.source           = { :git => 'https://github.com/Wagawin/wagawin-sdk-ios.git', :tag => s.version.to_s }
 
-  s.ios.deployment_target = '7.1'
+  s.ios.deployment_target = '8.0'
 
   s.source_files = 'WagawinSDK/Framework/**/*.h'
   s.vendored_libraries = 'WagawinSDK/Framework/**/*.a'
@@ -21,5 +21,6 @@ The Wagawin SDK will allow you to connect your app to the Wagawin Ad Network and
 
   s.resources = ['WagawinSDK/Assets/**/*.bundle']
   s.frameworks = 'UIKit', 'SystemConfiguration', 'CoreTelephony'
+  s.libraries = 'z'
 
 end

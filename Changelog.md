@@ -4,6 +4,10 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## 2.0.0 (2017-06-06)
+### Rewrite of the SDK:
+- complete rewrite with new functionalities and introducing zones
+
 ## 1.6.0 (2016-12-06)
 ### Added
 - manual loading for rewarded and interstitial ads
@@ -11,7 +15,6 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - more logging
 ### Removed
 - automatic loading
-
 
 ## 1.5.0 (2016-11-09)
 ### Fixed
@@ -97,4 +100,3 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ## 1.3.0 (2016-06-28)
 ### Added
 - translations for EN, HU, RU, PL
-
