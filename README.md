@@ -21,7 +21,7 @@ WagawinSDK is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod "WagawinSDK" , '~> 2.0.0'
+pod "WagawinSDK" , '~> 2.0.1'
 ```
 
 Alternatively, you can download the files manually from the [releases page][releases] and import them into your project by hand.
@@ -46,6 +46,17 @@ libz.tbd
 ```
 
 NOTE: With certain frameworks you may get linker errors. To get rid of the errors you have to add the $(inherited) linker flag and set the "Build active architecture only" flag to NO in the Build Settings
+
+The App Transport Security system of Apple is a default setting that requires apps to make network connections only over secure connections (SSL) for iOS9+. We are trying to make all of our demand partners compliant as soon as possible. Meanwhile, developers who want to release apps that support iOS9+, will need to disable ATS in order to ensure that Wagawin continues to give them the best possible campaigns:
+plist:
+```xml
+<key>NSAppTransportSecurity</key>
+<dict>
+    <key>NSAllowsArbitraryLoads</key>
+    <true/>
+</dict>
+```
+Developers can also edit the plist directly by adding NSAppTransportSecurity key of dictionary type with a dictionary element of NSAllowsArbitraryLoads of boolean type set to Yes.
 
 #### Important:  Submitting your App to the Appstore (IDFA Advertising Identifier)
 
