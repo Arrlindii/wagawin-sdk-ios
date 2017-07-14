@@ -6,9 +6,6 @@ WagawinSDK for iOS
 [![License](https://img.shields.io/cocoapods/l/WagawinSDK.svg?style=flat)](http://cocoapods.org/pods/WagawinSDK)
 [![Platform](https://img.shields.io/cocoapods/p/WagawinSDK.svg?style=flat)](http://cocoapods.org/pods/WagawinSDK)
 
-## Example
-
-To run the example project, clone the repo and run `pod install` from the Example directory first.
 
 ## Requirements
 The Sdk supports iOS 8.0+ and XCode 7.3+
@@ -48,6 +45,7 @@ libz.tbd
 NOTE: With certain frameworks you may get linker errors. To get rid of the errors you have to add the $(inherited) linker flag and set the "Build active architecture only" flag to NO in the Build Settings
 
 The App Transport Security system of Apple is a default setting that requires apps to make network connections only over secure connections (SSL) for iOS9+. We are trying to make all of our demand partners compliant as soon as possible. Meanwhile, developers who want to release apps that support iOS9+, will need to disable ATS in order to ensure that Wagawin continues to give them the best possible campaigns:
+
 plist:
 ```xml
 <key>NSAppTransportSecurity</key>
