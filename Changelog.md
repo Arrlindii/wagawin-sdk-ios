@@ -4,6 +4,9 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## 2.0.2 (2017-07-18)
+- minor bug fixes
+
 ## 2.0.1 (2017-07-14)
 ### Fixed
 - fixed a bug within the media loading system

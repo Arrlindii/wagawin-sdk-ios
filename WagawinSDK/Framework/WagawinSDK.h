@@ -33,6 +33,5 @@
 //set location
 +(void)setLocation:(CLLocation*)loc;
 
-//TODO remove this for release
 +(void)loadAdWithZone:(NSString*)zone andType:(NSString*)gameType;
 @end
