@@ -19,7 +19,7 @@ WagawinSDK is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod "WagawinSDK" , '~> 2.0.2'
+pod "WagawinSDK" , '~> 2.0.3'
 ```
 
 Normally you should have to configure building and linking when using CocoaPods. If you run into problems please read the next section.
@@ -40,7 +40,6 @@ Link your target under *Build Phases* with the following libraries:
 SystemConfiguration.framework
 CoreTelephony.framework
 libWagawinSDKLibrary.a
-libz.tbd
 ```
 
 NOTE: With certain frameworks you may get linker errors. To get rid of the errors you have to add the $(inherited) linker flag and set the "Build active architecture only" flag to NO in the Build Settings
