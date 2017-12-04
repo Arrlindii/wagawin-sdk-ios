@@ -19,7 +19,7 @@ WagawinSDK is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod "WagawinSDK" , '~> 2.0.3'
+pod "WagawinSDK" , '~> 2.0.4'
 ```
 
 Normally you should have to configure building and linking when using CocoaPods. If you run into problems please read the next section.
