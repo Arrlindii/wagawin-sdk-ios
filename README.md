@@ -1,4 +1,4 @@
-# wagawin-sdk-ios
+# WagawinSDK
 
 WagawinSDK for iOS
 
@@ -7,7 +7,7 @@ WagawinSDK for iOS
 [![Platform](https://img.shields.io/cocoapods/p/WagawinSDK.svg?style=flat)](http://cocoapods.org/pods/WagawinSDK)
 
 ## Requirements
-The SDK supports iOS 8.0+
+The SDK supports iOS 9.0+
 
 ### Register your Application
 In order to use the Wagawin SDK you have to complete the following steps:
@@ -173,9 +173,6 @@ NOTE: If your App hasn't been verified yet, you will receive no ads when you are
 
 Wagawin GmbH, publisher@wagawin.com
 
-## License
+---
 
 Copyright 2018, Wagawin GmbH, all rights reserved
-
-## Changelog
-[changelog]: https://github.com/Wagawin/wagawin-sdk-ios/blob/master/Changelog.md

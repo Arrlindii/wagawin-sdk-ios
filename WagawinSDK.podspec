@@ -9,14 +9,14 @@ Pod::Spec.new do |s|
                    DESC
 
   s.homepage     = "https://www.wagawin.com"
-  s.license      = { :type => "Commercial", :text => "Copyright 2018, Wagawin GmbH, all rights reserved" }
-  s.author             = { "Wagawin GmbH" => "publisher@wagawin.com" }
+  s.license      = "Commercial"
+  s.author       = { "Wagawin GmbH" => "publisher@wagawin.com" }
 
-  s.ios.deployment_target = "8.0"
+  s.ios.deployment_target = "9.0"
 
-  s.source       = { :HTTP => "https://github.com/Wagawin/wagawin-sdk-ios/archive/#{s.version}.zip"}
+  s.source       = { :git => "https://github.com/Wagawin/wagawin-sdk-ios.git", tag:"#{s.version}"}
 
-  s.vendored_frameworks = 'WagawinSDK.framework'
+  s.vendored_frameworks = "WagawinSDK.framework'
 
 
 end
