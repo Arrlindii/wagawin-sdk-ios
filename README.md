@@ -25,7 +25,7 @@ WagawinSDK is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod "WagawinSDK" , '~> RELEASE_VERSION'
+pod "WagawinSDK" , '~> 3.0.262'
 ```
 
 ### IMPORTANT:  Submitting your App to the Appstore (IDFA Advertising Identifier)
