@@ -5,7 +5,7 @@ Pod::Spec.new do |s|
   s.summary      = "The Wagawin Ad Network SDK"
 
   s.description  = <<-DESC
-  The Wagawin SDK let's you connect your app to the Wagawin Ad Network and siaply Wagawin Ads in your native iOS application.
+  The Wagawin SDK let's you connect your app to the Wagawin Ad Network and display Wagawin Ads in your native iOS application.
                    DESC
 
   s.homepage     = "https://www.wagawin.com"
