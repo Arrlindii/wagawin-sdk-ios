@@ -1,0 +1,11 @@
+framework module WagawinSDK {
+  umbrella header "WagawinSDK.h"
+
+  export *
+  module * { export * }
+}
+
+module WagawinSDK.Swift {
+    header "WagawinSDK-Swift.h"
+    requires objc
+}
