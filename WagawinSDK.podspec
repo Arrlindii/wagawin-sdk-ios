@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
 
   s.source       = { :git => "https://github.com/Wagawin/wagawin-sdk-ios.git", tag:"#{s.version}"}
 
-  s.vendored_frameworks = "WagawinSDK.framework'
+  s.vendored_frameworks = "WagawinSDK.framework"
 
 
 end
